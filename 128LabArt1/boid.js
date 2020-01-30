@@ -1,6 +1,5 @@
 class Boid{
   constructor (x,y){
-    this.segments = []
     this.loc=createVector(x,y);
     this.vel = createVector(0,0);
     //this.size=size
@@ -8,5 +7,5 @@ class Boid{
 
 }
 run(){
-  
+
 }
