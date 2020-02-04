@@ -32,4 +32,14 @@ run(){
   }
   
   render() {
-    for(var i = 0;
+    for(var i = 0; i<boids.length;; i++){
+      let d = dist(this.loc.x, this.loc.y, boid[i].loc.x, boids[i].loc.y)
+      if(d < 200){
+        stroke(this.clr, 50)
+        line(this.loc.x, this.loc.y, boids[i].loc.x, boids[i].loc.y)
+      }
+    }
+    //fill(255, 135, 255)
+    //ellipse(this.loc.x, this.loc.y, 10, 10)
+  }
+}
