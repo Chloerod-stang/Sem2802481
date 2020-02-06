@@ -5,7 +5,7 @@
 //<<<<<<< HEAD
 
 //=======
-boids = []
+boid = []
 //>>>>>>> 44bac0aa6c6b6acc40e39634f766f2415c36edbe
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -28,7 +28,8 @@ function loadBoids(n) {
   for(var i=0; i<n; i++){
 //<<<<<<< HEAD
 //=======
-    boids[i]= new Boid(random(width), random(height), random(-4, 4), random (-4, 4))
+    boid[i]= new Boid(random(width), random(height), random(-4, 4), random(-4, 4))
 //>>>>>>> 44bac0aa6c6b6acc40e39634f766f2415c36edbe
   }
+
 }
