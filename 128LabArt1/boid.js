@@ -1,5 +1,5 @@
 class Boid {
-  //   this.loc //  init in constructor
+  // this.loc //  init in constructor
   // this.vel //  init in constructor
   // this.acc //  init in constructor
   // this.clr //  this is the color of your boid
@@ -10,8 +10,18 @@ class Boid {
     this.acc = createVector(0, 0);
     this.clr = color(random(0, 256), random(0, 256), random(0, 256));
     this.orbiters = []
+    this.loadOrbiters()
   }
 
+  
+  loadOrbiters(){
+    for (let i = 0; i < 3; i++) {
+      var orbiter = new Orbiter(random(0, 200), random(0, 200), random(0, 10), (random(0, 10)))
+      orbiter.run()
+      this.orbiters.push(orbiter);
+    }
+  }
+  
   run() {
     this.update();
     this.checkEdges();
@@ -43,8 +53,11 @@ class Boid {
 }
 
 // This method will draw a line between its location and the location of any other boid object within 200px. //  no ellipse
-render() {}
-  for(let i = 0; i<boids.length; i++){
-    let d = dist(this.loc.x, this.loc.y, boids[i].loc.x, boids[i].loc.y)
+render() {
+  // for(let i = 0; i<boids.length; i++){
+  //   let d = dist(this.loc.x, this.loc.y, 
+  //                boids[i].loc.x,   boids[i].loc.y)
+  // }
 }
+  
 }
