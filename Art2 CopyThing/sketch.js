@@ -27,6 +27,7 @@ function draw() {
 		particles[i].display();
 	}
 }
+
 function Particle(x, y, c) {
 	this.xPos = x; this.yPos = y;
 	this.xVel = 0; this.yVel = 0;
@@ -43,8 +44,9 @@ function Particle(x, y, c) {
 	this.display = function() {
 		fill(this.colour)
 		ellipse(this.xPos, this.yPos, this.mass*1000, this.mass*1000)
-	}
+	};
 }
+
 function handleInteractions(i, j) {
 	for (var i = 0; i < particles.length; i++) {
 	var accX = 0; var accY = 0;

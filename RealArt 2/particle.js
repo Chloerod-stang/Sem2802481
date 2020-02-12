@@ -8,7 +8,7 @@ class Particle{
 
   }
 
-  Particle(x, y, c) {
+  function Particle(x, y, c) {
   	this.xPos = x; this.yPos = y;
   	this.xVel = 0; this.yVel = 0;
   	this.mass = random(0.003, 0.03);
