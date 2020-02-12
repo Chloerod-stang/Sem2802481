@@ -101,11 +101,11 @@ function keyPressed() {
 }
 
 // creates a new particle
-function mousePressed() {
-	particles.push(new Particle(mouseX, mouseY, c));
-}
+// function mousePressed() {
+// 	particles.push(new Particle(mouseX, mouseY, c));
+// }
 
-// creates a new particle
-function mouseDragged() {
-	particles.push(new Particle(mouseX, mouseY, c));
-}
+// // creates a new particle
+// function mouseDragged() {
+// 	particles.push(new Particle(mouseX, mouseY, c));
+// }
