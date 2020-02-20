@@ -1,4 +1,4 @@
-//  Your Name
+//  Chloe Rodriguez Stangle
 // 	Date or version number
 //  This is a comment
 //  The setup function function is called once when your program begins
