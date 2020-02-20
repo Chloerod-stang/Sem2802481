@@ -2,82 +2,37 @@
 // 	Date or version number
 //  This is a comment
 //  The setup function function is called once when your program begins
-var max_creeps = 30;
-
-var creeps = [];
-var rotations;
-
-var paused = false;
+balls =[]
+orbiters =[]
 
 function setup() {
-	createCanvas(windowHeight - 100, windowHeight - 100);
-	background(20);
-
-	rotations = round(random(2,12))
-
-	for(var i = 0; i < 3; i++){
-		creeps[i] = new Creep();
-	}
-
-	colorMode(RGB, 255);
-	fill(25);
-	noStroke();
-	rect(0, 0, width, height);
-	noFill();
-	stroke(50);
-	strokeWeight(3);
-	ellipse(width/2, height/2, width*0.805, height*0.805);
+  createCanvas(500, 500);
+  loadBalls();
+  loadOrbiters();  
 }
 
 function draw() {
-	if(!paused){
-		for(var i = 0; i < creeps.length; i++){
-			creeps[i].update();
-		}
-
-		if(creeps.length == 0){
-			creeps.push(new Creep());
-		}
-
-		resetMatrix();
-		colorMode(RGB, 255);
-		blendMode(BLEND);
-		noFill();
-		stroke(20);
-		strokeWeight(40);
-		rect(-10, -10, width+20, height+20, 80);
-	}
+  background(220);
+  for (i = 0; i < balls.length; i++) {//making it run
+      balls[i].run()
+    } 
+  for (i = 0; i < orbiters.length; i++) {//making it run
+      orbiters[i].run()
+    } 
 }
 
-function mouseClicked() {
-	var creep = new Creep();
-	creep.x = mouseX-width/2;
-	creep.y = mouseY-height/2;
-  creeps.push(creep);
-}
 
-function keyPressed() {
-  if (keyCode == 32) {
-
-    rotations = round(random(2,12))
-		creeps = []
-		colorMode(RGB, 255);
-		fill(25);
-		noStroke();
-		rect(0, 0, width, height);
-		noFill();
-		stroke(50);
-		strokeWeight(3);
-		ellipse(width/2, height/2, width*0.805, height*0.805);
-		paused = false;
+function loadBalls(){
+  for (let i = 0; i < 1; i++) {
+    ball = new Ball(random(0, 200), random(0, 200), random(0,3), (random(0, 3)))
+    balls.push(ball);
   }
-	if(keyCode == 80){
-		paused = !paused;
-	}
-	if(keyCode == 70){
-		var pic = get();
-		pic.filter(BLUR);
-		pic.filter(POSTERIZE);
-		image(pic, 0, 0);
-	}
+}
+    
+
+function loadOrbiters(){
+  for (let i = 0; i < 10; i++) {
+    orbiter = new Orbiter(random(0, 200), random(0, 200), random(0, 5), (random(0, 5)), balls[0])
+    orbiters.push(orbiter);
+  }  
 }
