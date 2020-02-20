@@ -107,6 +107,10 @@ function keyPressed() {
 	if (keyCode === 82)	{
 		particles = [];
 	}
+  
+  	if (keyCode === 71)	{
+		viscosity = viscosity * viscosity 
+	}
 }
 
 // creates a new particle
