@@ -15,9 +15,11 @@ function setup() {
 //  The draw function is called @ 30 fps
 function draw() {
   background(5, 5, 5);
-  for(var i = 0; i < particles.length; i++)
-  particles[i].run();
+  for(var i = 0; i < particles.length; i++) {
+    particles[i].run()
+  }
 }
+
 
 function loadParticles(n){
   for(var i = 0; i < 10; i++)
