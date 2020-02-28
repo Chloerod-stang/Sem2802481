@@ -20,7 +20,7 @@ class Orbiter{
     } else {
       if (this.x - ball.x < 25) { // too close to ball
             this.dx = -this.dx;
-          }      
+          }
     }
     if (this.y < 0 || this.y > 500) {
       this.dy = -this.dy;
@@ -37,10 +37,10 @@ class Orbiter{
 //     }
 //    if (this.y - ball.y < 25) { // too close to ball
 //       this.dy = -this.dy;
-//     }   
+//     }
 //   }
-  
-  
+
+
   update() {
     this.x = this.x + this.dx;
     this.y = this.y + this.dy;
