@@ -1,4 +1,4 @@
-class rect{
+class Ball{
  constructor(x, y, dx, dy) {
     this.x = x;
     this.y = y;
