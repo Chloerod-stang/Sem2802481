@@ -8,6 +8,7 @@ var gameState;
 var numCol, snakeWidth;
 var isEaten
 var runObjects
+var counter = 0
 
 function setup() {
   var cnv = createCanvas(800, 800);
