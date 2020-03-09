@@ -9,9 +9,10 @@ var numCol, snakeWidth;
 var isEaten
 var runObjects
 var counter = 0
+var ball;
 
 function setup() {
-  var cnv = createCanvas(800, 800);
+  var cnv = createCanvas(500, 500);
 
   snakeWidth = 25;
   numCol= width/snakeWidth;
@@ -19,8 +20,11 @@ function setup() {
   background(5, 5, 5);
   frameRate(11);
   fill(200, 30, 150);
-  snake = new Snake (Math.floor(random(numCol))*snakeWidth, Math.floor(random(numCol))*snakeWidth, snakeWidth);
+  ball = new Ball(random(500), 0)
+  snake = new Snake (Math.floor(random(numCol))*snakeWidth, Math.floor(random(numCol))*snakeWidth, snakeWidth, ball);
+  
   food = new Food(Math.floor(random(numCol))*snakeWidth, Math.floor(random(numCol))*snakeWidth, snakeWidth);
+  
 }
 
 //  The draw function is called @ 30 fps
@@ -33,6 +37,7 @@ function draw() {
   }
   snake.run();
   food.run();
+  ball.run();
 }
 
   function newGame(){
