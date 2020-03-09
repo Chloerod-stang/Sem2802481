@@ -1,11 +1,12 @@
 class Snake{
-  constructor (x,y,w){
+  constructor (x,y,w, ball){
     this.segments = []
     this.loc=createVector(x,y);
     this.vel = createVector(0,0);
     this.w = snakeWidth;
     //this.size=size
     this.clr = color(random(255), random(255), random(255));
+    this.ball = ball
   }
 
   run(){
@@ -49,7 +50,15 @@ render(){
       this.loc.y> 800  &&
       this.loc.y< 0){
         gameState = 3
+      
       }
+    if(this.loc.x-this.ball.x<100 && this.segments.length>0) {
+      console.log(this.segments.length)
+      this.segments = []
+     // this.grow();
+      //this.segments = this.segments.pop();
+    }
+      
   }
 
   }//end of snake class
