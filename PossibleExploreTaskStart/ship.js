@@ -1,4 +1,3 @@
-
 class ship {
    constructor(x, y, dx, dy, id) {
      this.clr = color(random(255), random(255), random(255));
@@ -51,4 +50,3 @@ class ship {
    }
  }
 }
-
