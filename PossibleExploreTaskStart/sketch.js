@@ -1,8 +1,5 @@
-//  Chloe Rodriguez Stangle
-// 	Date or version number
-
-//  The setup function function is called once when your program begins
 var ships = [];
+var hals = [];
 var planet;
 var x = 1; //user entered number of balls page dialog
 function setup() {
@@ -17,6 +14,7 @@ function loadAll(n){
  for(q=0;q<x;q++){
    planet = new Planet(100, 500, 50, 50, -1);
    ships[q] = new ship(random(800), random(800), random(-3, 3), random(-3, 3), q);
+   hals[q] = new hal(random(800), random(800), random(-3, 3), random(-3, 3), q);
  }
 }
  
@@ -25,7 +23,14 @@ function draw() {
  background(5, 5, 5, 60);
  for(var i = 0; i < ships.length; i++){
    ships[i].run();
- } planet.run();
+ }
+  for(var i = 0; i < hals.length; i++){
+   hals[i].run();
+ }
+  
+  planet.run();
+  // hal.run();
+  
 }
  
 function shipsDraw(){
@@ -34,5 +39,10 @@ if (this.id > -1){
  for(i=0;i<x;i++){
 ships[i].run();
  }
+  for(i=0;i<x;i++){
+hals[i].run();
+ }  
+  
 }
+  
 }
