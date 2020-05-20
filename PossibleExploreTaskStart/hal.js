@@ -1,9 +1,10 @@
 class hal {
-   constructor(x, y, dx, dy, id) {
+   constructor(x, y, dx, dy, id, ship) {
      this.clr = color(random(255), random(255), random(255));
      this.loc = createVector(x, y);
      this.vel = createVector(dx, dy);
      this.id = id;
+     this.ship = ship;
      this.acc = createVector(0, .1);
       this.run = function () {
        this.checkEdges();
@@ -26,9 +27,9 @@ class hal {
      }
      this.update = function () {
        if (id > -1) {
-         var dist = this.loc.dist(planet.loc);
+         var dist = this.loc.dist(this.ship.loc);
          if (dist > 11&&dist < 350) {
-           this.Force = p5.Vector.sub(planet.loc, this.loc);//attract
+           this.Force = p5.Vector.sub(this.ship.loc, this.loc);//attract
            this.Force.normalize();
            this.Force.mult(0.6);
            this.vel.add(this.Force);
