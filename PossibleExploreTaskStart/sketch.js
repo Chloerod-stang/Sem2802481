@@ -1,7 +1,7 @@
 var ships = [];
 var hals = [];
 var planet;
-var x = 1; //user entered number of balls page dialog
+var x = 3; //user entered number of balls page dialog
 function setup() {
  var cnv = createCanvas(800, 800);
  cnv.position((windowWidth-width)/2, 30);
@@ -14,7 +14,7 @@ function loadAll(n){
  for(q=0;q<x;q++){
    planet = new Planet(100, 500, 50, 50, -1);
    ships[q] = new ship(random(800), random(800), random(-3, 3), random(-3, 3), q);
-   hals[q] = new hal(random(800), random(800), random(-3, 3), random(-3, 3), q);
+   hals[q] = new hal(random(800), random(800), random(-3, 3), random(-3, 3), q, ships[q]);
  }
 }
  
